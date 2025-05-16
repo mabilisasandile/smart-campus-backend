@@ -1,7 +1,7 @@
 import validator from 'validator'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
-import userModel from '../models/userModel.js'
+import userModel from '../models/UserModel.js'
 
 // Function to create a JWT token
 const createToken = (id) => {
@@ -147,4 +147,4 @@ const adminLogin = async (req,res) => {
     }
 }
 
-export { loginUser,registerUser,adminLogin, signUpUser }
+export { loginUser,registerUser,adminLogin,signUpUser }

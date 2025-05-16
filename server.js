@@ -3,7 +3,7 @@ import cors from "cors";
 import "dotenv/config";
 import connectDB from "./config/mongodb.js";
 import userRouter from "./routes/userRoute.js";
-
+import timetableRouter from "./routes/TimetableRoute.js";
 
 // App Config
 const app = express();
@@ -23,9 +23,11 @@ app.use(cors());
 
 // api endpoints
 app.use("/api/user", userRouter);
+app.use("/api/timetable", timetableRouter);
 
 app.get("/", (req, res) => {
   res.send("API Working");
 });
+
 
 app.listen(port, () => console.log("Server started on PORT: " + port));
