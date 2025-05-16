@@ -25,7 +25,10 @@ const loginUser = async (req, res) => {
       return res.json({
         success: true,
         token,
-        role: user.role  // Ensure role is returned
+        role: user.role,  // Ensure role is returned
+        userId: user._id,
+        name: user.name,
+        email: user.email,
       });
     } else {
       return res.json({ success: false, message: 'Invalid credentials' });
